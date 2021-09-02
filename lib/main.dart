@@ -2,6 +2,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_native_admob/flutter_native_admob.dart';
+import 'package:flutter_native_admob/native_admob_controller.dart';
 import 'package:over_comer_tube/MOL/FourStepsPage.dart';
 import 'package:over_comer_tube/MOL/Key2Page.dart';
 import 'package:over_comer_tube/MOL/Key3Page.dart';
@@ -82,7 +84,9 @@ class _MyHomePageState extends State<MyHomePage> {
   }
   final titles = [tr("Preface"), tr("key1_title"), tr("key2_title"), tr("key3_title"), tr("key4_title")];
   final pages = ['/key0', '/key1', '/key2', '/key3', '/key4'];
+  static const _adUnitID = "ca-app-pub-3940256099942544/8135179316";
 
+  final _nativeAdController = NativeAdmobController();
   final icons = [Icons.vpn_key];
   @override
   Widget build(BuildContext context) {
@@ -118,19 +122,31 @@ class _MyHomePageState extends State<MyHomePage> {
                           child: ListView.builder(
                               physics:new NeverScrollableScrollPhysics(),
                               shrinkWrap: true,
-                              itemCount: titles.length ,
+                              itemCount: titles.length + 1, // add 1 cell to display ad.
                               itemBuilder: (context, index) {
-                                return GestureDetector(
-                                  onTap:()=>{
-                                    Navigator.of(context).pushNamed('/kay${index}')
-                                  },
-                                  child: Card(
-                                    child: ListTile(
-                                      leading: Icon(icons[0]),
-                                      title: Text(titles[index]),
+                                if (index == titles.length) {
+                                  return Container(
+                                    height: 180,
+                                    padding: EdgeInsets.all(10),
+                                    margin: EdgeInsets.only(bottom: 0.0),
+                                    child: NativeAdmob(
+                                      adUnitID: _adUnitID,
+                                      controller: _nativeAdController,
                                     ),
-                                  ),
-                                );
+                                  );
+                                } else {
+                                  return GestureDetector(
+                                    onTap:()=>{
+                                      Navigator.of(context).pushNamed('/kay${index}')
+                                    },
+                                    child: Card(
+                                      child: ListTile(
+                                        leading: Icon(icons[0]),
+                                        title: Text(titles[index]),
+                                      ),
+                                    ),
+                                  );
+                                }
                               }
                           ),
                         ),
