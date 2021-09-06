@@ -25,6 +25,9 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
+//Plug in google-services to fix E/FA Missing google_app_id. Firebase Analytics disabled.
+apply plugin: 'com.google.gms.google-services'
+
 android {
     compileSdkVersion 30
 

@@ -1,10 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:over_comer_tube/MyWidget/LargeBoldText.dart';
-import 'package:over_comer_tube/MyWidget/MiddleAmberBoldText.dart';
-import 'package:over_comer_tube/MyWidget/MiddleText.dart';
+import 'package:over_comer_tube/MyWidget/MyAdWidget.dart';
+import 'package:over_comer_tube/MyWidget/TextWidget/LargeBoldText.dart';
+import 'package:over_comer_tube/MyWidget/TextWidget/MiddleAmberBoldText.dart';
+import 'package:over_comer_tube/MyWidget/TextWidget/MiddleText.dart';
 import 'package:over_comer_tube/MyWidget/RoundedButton.dart';
-import 'package:over_comer_tube/MyWidget/SmallHintText.dart';
+import 'package:over_comer_tube/MyWidget/TextWidget/SmallHintText.dart';
 
 class Key4Page extends StatelessWidget {
 
@@ -218,6 +219,12 @@ class Key4Page extends StatelessWidget {
                   )
               )
             ],
+          ),
+          bottomNavigationBar:Container(
+            height: 80,
+            child: Card(
+                child: MyAdWidget()
+            ),
           )
       ),
     );

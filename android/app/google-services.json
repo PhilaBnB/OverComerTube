@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "215889447648",
+    "project_id": "overcomertube",
+    "storage_bucket": "overcomertube.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:215889447648:android:3908793a716addf41b1e85",
+        "android_client_info": {
+          "package_name": "com.philabnb.over_comer_tube"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "215889447648-5jafjopkoiq3acdnnrqicmjs67b2l005.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDU3t7tcVa4hrNKd4HjYN7E_oWT9bAeRV4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "215889447648-5jafjopkoiq3acdnnrqicmjs67b2l005.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
