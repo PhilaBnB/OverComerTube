@@ -2,17 +2,20 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_native_admob/flutter_native_admob.dart';
-import 'package:flutter_native_admob/native_admob_controller.dart';
-import 'package:over_comer_tube/MOL/FourStepsPage.dart';
-import 'package:over_comer_tube/MOL/Key2Page.dart';
-import 'package:over_comer_tube/MOL/Key3Page.dart';
-import 'package:over_comer_tube/MOL/Key4Page.dart';
+import 'package:over_comer_tube/AboutAPP.dart';
 import 'package:over_comer_tube/MyWidget/MyAdWidget.dart';
-
+import 'package:over_comer_tube/View/MOL/FourStepsPage.dart';
+import 'package:over_comer_tube/View/MOL/Key0Page.dart';
+import 'package:over_comer_tube/View/MOL/Key1Page.dart';
+import 'package:over_comer_tube/View/MOL/Key2Page.dart';
+import 'package:over_comer_tube/View/MOL/Key3Page.dart';
+import 'package:over_comer_tube/View/MOL/Key4Page.dart';
+import 'package:over_comer_tube/View/MorePage.dart';
 import 'BlocEvent.dart';
-import 'MOL/Key0Page.dart';
-import 'MOL/Key1Page.dart';
+import 'dart:io';
+
+import 'dart:convert' as convert;
+import 'package:http/http.dart' as http;
 
 void main() {
   runApp(
@@ -47,6 +50,8 @@ class MyApp extends StatelessWidget {
         '/kay3':(context) => Key3Page(),
         '/kay4':(context) => Key4Page(),
         '/fourSteps':(context) => FourStepsPage(),
+        '/More':(context) => MorePage(),
+        '/About':(context) => AboutAPP(),
       },initialRoute: '/',
     );
   }
@@ -154,6 +159,13 @@ class _MyHomePageState extends State<MyHomePage> {
                               }
                           ),
                         ),
+                        Container(
+                            color: Color.fromRGBO(25, 27, 47, 1.0),
+                            child: ListTile(
+                              title: Text("- More -", style: TextStyle(color: Colors.white, fontSize: 24.0, fontWeight: FontWeight.bold)),
+                              onTap: () => Navigator.of(context).pushNamed('/More'),
+                            )
+                        ),
                       ],
                     )
                 )
@@ -161,4 +173,21 @@ class _MyHomePageState extends State<MyHomePage> {
         )
     );
   }
+  Future<void> apiTest() async {
+    var url = 'https://api.github.com/users/PhilaBnB';
+
+    // Await the http get response, then decode the json-formatted response.
+    var response = await http.get(
+        Uri.parse('https://api.github.com/users/PhilaBnB'),
+        headers: { HttpHeaders.authorizationHeader: 'application/vnd.github.v3+json'});
+    if (response.statusCode == 200) {
+      var jsonResponse =
+      convert.jsonDecode(response.body) as Map<String, dynamic>;
+      var itemCount = jsonResponse['location'];
+      print('bio: $itemCount');
+    } else {
+      print('Request failed with status: ${response.statusCode}.');
+    }
+  }
+
 }
