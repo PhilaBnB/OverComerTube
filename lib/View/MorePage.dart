@@ -7,7 +7,7 @@ import 'package:over_comer_tube/MyWidget/MyAdWidget.dart';
 
 class MorePage extends StatelessWidget {
   final titles = [tr("About Developer")];
-  final pages = ['/About'];
+  // final pages = ['/About'];
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +52,7 @@ class MorePage extends StatelessWidget {
                               return GestureDetector(
                                   onTap:()=>{
                                     if(index == 0)
-                                      Navigator.of(context).pushNamed('/About')
+                                      Navigator.of(context).pushNamed('/GithubProfile')
                                   },
                                   child: Container(
                                     height: 80,

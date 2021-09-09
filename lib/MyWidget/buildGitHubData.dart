@@ -33,7 +33,7 @@ Column buildGitHubData(Response response) {
           Text(
             github_name,
             style: TextStyle(
-              color: Colors.white,
+              color: Colors.black,
               fontSize: 25,
               fontWeight: FontWeight.bold,
             ),
@@ -44,7 +44,7 @@ Column buildGitHubData(Response response) {
             child: Text(
               github_bio + ' @' + github_location,
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontSize: 18,
               ),
               textAlign: TextAlign.center,

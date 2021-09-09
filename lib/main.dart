@@ -2,8 +2,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:over_comer_tube/AboutAPP.dart';
 import 'package:over_comer_tube/MyWidget/MyAdWidget.dart';
+import 'package:over_comer_tube/View/GithubProfilePage.dart';
 import 'package:over_comer_tube/View/MOL/FourStepsPage.dart';
 import 'package:over_comer_tube/View/MOL/Key0Page.dart';
 import 'package:over_comer_tube/View/MOL/Key1Page.dart';
@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
         '/kay4':(context) => Key4Page(),
         '/fourSteps':(context) => FourStepsPage(),
         '/More':(context) => MorePage(),
-        '/About':(context) => AboutAPP(),
+        '/GithubProfile':(context) => GithubProfileBloc(),
       },initialRoute: '/',
     );
   }
