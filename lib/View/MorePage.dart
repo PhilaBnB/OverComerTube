@@ -4,10 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:over_comer_tube/BlocEvent.dart';
 import 'package:over_comer_tube/MyWidget/MyAdWidget.dart';
+import 'package:over_comer_tube/MyWidget/SingleSelector.dart';
+  List<String> Langs = [
+    "中文",
+    "English",
+  ];
 
 class MorePage extends StatelessWidget {
-  final titles = [tr("About Developer")];
-  // final pages = ['/About'];
+  final titles = [tr("About Developer"),tr("Language")];
 
   @override
   Widget build(BuildContext context) {
@@ -51,8 +55,10 @@ class MorePage extends StatelessWidget {
                             } else {
                               return GestureDetector(
                                   onTap:()=>{
-                                    if(index == 0)
+                                    if(index == 0)//github profile
                                       Navigator.of(context).pushNamed('/GithubProfile')
+                                    else if(index == 1)//更換語言
+                                      showLangDialog(context)
                                   },
                                   child: Container(
                                     height: 80,
@@ -77,5 +83,47 @@ class MorePage extends StatelessWidget {
         ),
         )
     );
+  }
+}
+
+enum LanguageOption { ZH_TW, EN_US }
+
+showLangDialog(BuildContext context){
+  var selectLang = 0;
+  showDialog(
+      context: context,
+      builder: (ctx) {
+        return AlertDialog(
+          title: Text(tr("Choose a language")),
+          actions: <Widget>[
+            FlatButton(
+              child: Text(tr("Cancel")),
+              onPressed: () {
+                Navigator.of(context).pop();
+              }),
+            FlatButton(
+                child: Text(tr("Ok")),
+                onPressed: () {
+                  setLanguageByIndex(context, selectLang);
+                  Navigator.of(context).pop();
+                })
+          ],
+          content: Container(
+              width: 300,
+              height: 400,
+              child: SingleSelector(Langs, (index){selectLang = index;}),
+          )
+        );
+      });
+}
+
+void setLanguageByIndex(BuildContext context, int selectLang) {
+  switch (selectLang){
+    case 0:
+      context.locale = Locale('zh', 'TW');
+      break;
+    case 1:
+      context.locale = Locale('en', 'US');
+      break;
   }
 }
