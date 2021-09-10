@@ -1,6 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.philabnb.over_comer_tube">
-   <application
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
         android:label="OverComerTube"
         android:icon="@mipmap/ic_launcher">
         <activity

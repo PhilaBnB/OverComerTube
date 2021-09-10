@@ -1,4 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,13 +13,18 @@ import 'package:over_comer_tube/View/MOL/Key2Page.dart';
 import 'package:over_comer_tube/View/MOL/Key3Page.dart';
 import 'package:over_comer_tube/View/MOL/Key4Page.dart';
 import 'package:over_comer_tube/View/MorePage.dart';
+import 'package:package_info_plus/package_info_plus.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'BlocEvent.dart';
 import 'dart:io';
 
 import 'dart:convert' as convert;
 import 'package:http/http.dart' as http;
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(
     BlocProvider(
       create: (context) => MyBloc(),
@@ -65,11 +72,28 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
 
   final icons = [Icons.vpn_key];
+  final ref = FirebaseDatabase(databaseURL: 'https://overcomertube-default-rtdb.asia-southeast1.firebasedatabase.app').reference();
 
   @override
   Widget build(BuildContext context) {
     final titles = [tr("Preface"), tr("key1_title"), tr("key2_title"), tr("key3_title"), tr("key4_title")];
     //多語需在context作用範圍內定義，故相關變數須放置於context作用範圍內，否則會無法更換語言
+
+    checkVersion().then((version){
+      ref.child("version").once().then((DataSnapshot data_version){
+        if(version != data_version.value){
+          ref.child("playstore_url").once().then((DataSnapshot data_url){
+            showUpdateDialog(context, data_url.value);
+          });
+        }
+        else{
+          print("You are in the latest version : "+version);
+        }
+      });
+    }).catchError((error){
+      print(error);
+    });
+
     return AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle(
           statusBarColor: Colors.transparent, // status bar color
@@ -166,4 +190,42 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
+}
+Future<String> checkVersion() async {
+  PackageInfo packageInfo = await PackageInfo.fromPlatform();
+
+  String appName = packageInfo.appName;
+  String packageName = packageInfo.packageName;
+  String buildNumber = packageInfo.buildNumber;
+  String version = packageInfo.version;
+  return version;
+}
+
+void showUpdateDialog(BuildContext context, String url) {
+  showDialog(
+      context: context,
+      builder: (ctx) {
+        return AlertDialog(
+            title: Text(tr("New Version Available")),
+            actions: <Widget>[
+              FlatButton(
+                  child: Text(tr("Cancel")),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  }),
+              FlatButton(
+                  child: Text(tr("Ok")),
+                  onPressed: () {
+                    launch(url);
+                    Navigator.of(context).pop();
+                  })
+            ],
+            content: Container(
+              width: 300,
+              height: 100,
+              child: Text(tr("this is a hint to tell you to update the app.\n"
+                  "It should be said twice for it's importance, HaHa.")),
+            )
+        );
+      });
 }
