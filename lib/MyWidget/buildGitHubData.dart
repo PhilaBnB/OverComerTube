@@ -78,7 +78,7 @@ Column buildGitHubData(Response response) {
                     Text(
                       github_followers.toString(),
                       style: TextStyle(
-                        color: Color(0xff2BE1C8),
+                        color: Colors.amber[800],
                         fontSize: 30,
                       ),
                     ),
@@ -95,7 +95,7 @@ Column buildGitHubData(Response response) {
                     Text(
                       github_following.toString(),
                       style: TextStyle(
-                        color: Color(0xff2BE1C8),
+                        color: Colors.amber[800],
                         fontSize: 30,
                       ),
                     ),
@@ -112,7 +112,7 @@ Column buildGitHubData(Response response) {
                     Text(
                       github_public_repos.toString(),
                       style: TextStyle(
-                        color: Color(0xff2BE1C8),
+                        color: Colors.amber[800],
                         fontSize: 30,
                       ),
                     ),

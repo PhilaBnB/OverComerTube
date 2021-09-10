@@ -5,14 +5,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:over_comer_tube/MyWidget/MyAdWidget.dart';
-import 'package:over_comer_tube/View/GithubProfilePage.dart';
+import 'package:over_comer_tube/View/More/AboutAPP.dart';
+import 'package:over_comer_tube/View/More/GithubProfilePage.dart';
 import 'package:over_comer_tube/View/MOL/FourStepsPage.dart';
 import 'package:over_comer_tube/View/MOL/Key0Page.dart';
 import 'package:over_comer_tube/View/MOL/Key1Page.dart';
 import 'package:over_comer_tube/View/MOL/Key2Page.dart';
 import 'package:over_comer_tube/View/MOL/Key3Page.dart';
 import 'package:over_comer_tube/View/MOL/Key4Page.dart';
-import 'package:over_comer_tube/View/MorePage.dart';
+import 'package:over_comer_tube/View/More/MorePage.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'BlocEvent.dart';
@@ -46,7 +47,7 @@ class MyApp extends StatelessWidget {
       supportedLocales: EasyLocalization.of(context).supportedLocales,
       locale: context.locale,
       routes: {
-        '/':(context) => MyHomePage(title: '人生的奧秘'),
+        '/':(context) => MyHomePage(),
         '/kay0':(context) => Key0Page(),
         '/kay1':(context) => Key1Page(),
         '/kay2':(context) => Key2Page(),
@@ -55,16 +56,13 @@ class MyApp extends StatelessWidget {
         '/fourSteps':(context) => FourStepsPage(),
         '/More':(context) => MorePage(),
         '/GithubProfile':(context) => GithubProfileBloc(),
+        '/AboutAPP':(context) => AboutAppPage(),
       },initialRoute: '/',
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }

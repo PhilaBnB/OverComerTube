@@ -11,7 +11,7 @@ import 'package:over_comer_tube/MyWidget/SingleSelector.dart';
   ];
 
 class MorePage extends StatelessWidget {
-  final titles = [tr("About Developer"),tr("Language")];
+  final titles = [tr("About Developer"),tr("Language"),tr("About APP")];
 
   @override
   Widget build(BuildContext context) {
@@ -54,12 +54,7 @@ class MorePage extends StatelessWidget {
                               );
                             } else {
                               return GestureDetector(
-                                  onTap:()=>{
-                                    if(index == 0)//github profile
-                                      Navigator.of(context).pushNamed('/GithubProfile')
-                                    else if(index == 1)//更換語言
-                                      showLangDialog(context)
-                                  },
+                                  onTap:() => { tapListHandler(context, index) },
                                   child: Container(
                                     height: 80,
                                     child:Card(
@@ -83,6 +78,20 @@ class MorePage extends StatelessWidget {
         ),
         )
     );
+  }
+}
+
+tapListHandler(BuildContext context, int index) {
+  switch(index){
+    case 0://github profile
+      Navigator.of(context).pushNamed('/GithubProfile');
+      break;
+    case 1://更換語言
+      showLangDialog(context);
+      break;
+    case 2://about app
+      Navigator.of(context).pushNamed('/AboutAPP');
+      break;
   }
 }
 

@@ -34,7 +34,7 @@ class _SingleSelectorState extends State<SingleSelector> {
           },
           child: Container(
             color: selectedValue == widget.options[index]
-                ? Colors.green[100]
+                ? Colors.amber[100]
                 : null,
             child: Row(
               children: <Widget>[
