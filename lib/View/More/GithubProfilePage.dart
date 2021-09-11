@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:over_comer_tube/Bloc/https_bloc.dart';
@@ -36,7 +37,7 @@ class GithubProfilePageState extends State<GithubProfilePage>{
           centerTitle: true,
           elevation: 0,
           title: Text(
-            "Developer's Github Profile",
+            tr("Developer's Github Profile"),
             style: TextStyle(color: Colors.white),
           ),
         ),

@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:over_comer_tube/MyWidget/TextWidget/MiddleAmberBoldText.dart';
 import 'package:over_comer_tube/MyWidget/TextWidget/MiddleText.dart';
 
 class AboutAppPage extends StatelessWidget {
@@ -8,7 +9,7 @@ class AboutAppPage extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
-            title: Text(tr("About App"),
+            title: Text(tr("About APP"),
               style: TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.bold,
@@ -28,8 +29,13 @@ class AboutAppPage extends StatelessWidget {
                           children: [
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .9,
+                              child:MiddleAmberBoldText(
+                              text: tr("About APP_msg1")),
+                            ),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width * .9,
                               child:MiddleText(
-                              text: tr("hope and plan")),
+                              text: tr("About APP_msg2")),
                             ),
                           ]
                         )

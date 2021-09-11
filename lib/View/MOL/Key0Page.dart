@@ -16,7 +16,6 @@ class Key0Page extends StatelessWidget {
           body: CustomScrollView(
             slivers: [
               SliverAppBar(// 使用 SliverAppBar
-                collapsedHeight: 100.0,
                 toolbarHeight: 100.0,
                 title: Text(tr("to_know")+"\n"+tr("to_know_h1")),
                 backgroundColor: Colors.black87,

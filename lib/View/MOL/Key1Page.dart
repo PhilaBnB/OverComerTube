@@ -18,6 +18,7 @@ class Key1Page extends StatelessWidget {
                 title: Text(tr("key1_title_t1")+"\n"+tr("key1_title_t2")),
                 backgroundColor: Colors.black87,
                 expandedHeight: 100.0,
+                toolbarHeight: 100.0,
               ),
               SliverList(
                   delegate: SliverChildListDelegate(

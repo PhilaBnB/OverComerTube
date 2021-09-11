@@ -204,15 +204,15 @@ void showUpdateDialog(BuildContext context, String url) {
       context: context,
       builder: (ctx) {
         return AlertDialog(
-            title: Text(tr("New Version Available")),
+            title: Text(tr("new_version_title")),
             actions: <Widget>[
               FlatButton(
-                  child: Text(tr("Cancel")),
+                  child: Text(tr("next_time")),
                   onPressed: () {
                     Navigator.of(context).pop();
                   }),
               FlatButton(
-                  child: Text(tr("Ok")),
+                  child: Text(tr("go")),
                   onPressed: () {
                     launch(url);
                     Navigator.of(context).pop();
@@ -221,8 +221,7 @@ void showUpdateDialog(BuildContext context, String url) {
             content: Container(
               width: 300,
               height: 100,
-              child: Text(tr("this is a hint to tell you to update the app.\n"
-                  "It should be said twice for it's importance, HaHa.")),
+              child: Text(tr("new_version_msg")),
             )
         );
       });
