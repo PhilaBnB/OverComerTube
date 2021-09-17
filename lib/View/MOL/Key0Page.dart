@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:over_comer_tube/MyWidget/MyAdWidget.dart';
 import 'package:over_comer_tube/MyWidget/TextWidget/LargeBoldText.dart';
 import 'package:over_comer_tube/MyWidget/TextWidget/MiddleAmberBoldText.dart';
-import 'package:over_comer_tube/MyWidget/TextWidget/MiddleText.dart';
+import 'package:over_comer_tube/MyWidget/TextWidget/MiddleScrollText.dart';
 import 'package:over_comer_tube/MyWidget/TextWidget/SmallHintText.dart';
 
 class Key0Page extends StatelessWidget {
@@ -35,8 +35,15 @@ class Key0Page extends StatelessWidget {
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
-                              child: MiddleText(
-                                text: tr("msg_the_reason_people_live"),
+                              child: MiddleScrollText(
+                                text: tr("msg_the_reason_people_live_1"),
+                              )
+                            ),
+
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width * .8,
+                              child: MiddleScrollText(
+                                text: tr("msg_the_reason_people_live_2"),
                               )
                             ),
 
@@ -56,7 +63,7 @@ class Key0Page extends StatelessWidget {
 
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
-                                child: MiddleText(
+                                child: MiddleScrollText(
                                   text: tr("msg_gods_plan"),
                                 )
                             ),
@@ -83,8 +90,15 @@ class Key0Page extends StatelessWidget {
 
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
-                                child: MiddleText(
-                                  text: tr("msg_four_keys"),
+                                child: MiddleScrollText(
+                                  text: tr("msg_four_keys_1"),
+                                )
+                            ),
+
+                            SizedBox(
+                                width: MediaQuery.of(context).size.width * .8,
+                                child: MiddleScrollText(
+                                  text: tr("msg_four_keys_2"),
                                 )
                             ),
 

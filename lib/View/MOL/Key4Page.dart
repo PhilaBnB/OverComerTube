@@ -4,8 +4,8 @@ import 'package:over_comer_tube/MyWidget/DiagramByLangsWidget.dart';
 import 'package:over_comer_tube/MyWidget/MyAdWidget.dart';
 import 'package:over_comer_tube/MyWidget/TextWidget/LargeBoldText.dart';
 import 'package:over_comer_tube/MyWidget/TextWidget/MiddleAmberBoldText.dart';
-import 'package:over_comer_tube/MyWidget/TextWidget/MiddleText.dart';
 import 'package:over_comer_tube/MyWidget/RoundedButton.dart';
+import 'package:over_comer_tube/MyWidget/TextWidget/MiddleScrollText.dart';
 import 'package:over_comer_tube/MyWidget/TextWidget/SmallHintText.dart';
 
 class Key4Page extends StatelessWidget {
@@ -37,7 +37,7 @@ class Key4Page extends StatelessWidget {
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
-                              child: MiddleText(
+                              child: MiddleScrollText(
                                 text: tr("key4_msg_twice_become1"),
                               ),
                             ),
@@ -56,7 +56,7 @@ class Key4Page extends StatelessWidget {
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
-                              child: MiddleText(
+                              child: MiddleScrollText(
                                 text: tr("key4_msg_twice_become2"),
                               ),
                             ),
@@ -77,7 +77,7 @@ class Key4Page extends StatelessWidget {
 
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
-                                child: MiddleText(
+                                child: MiddleScrollText(
                                   text: tr("key4_msg_twice_become3"),
                                 )
                             ),
@@ -87,7 +87,7 @@ class Key4Page extends StatelessWidget {
                             ),
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
-                                child: MiddleText(
+                                child: MiddleScrollText(
                                   text: tr("key4_msg_twice_become4"),
                                 )
                             ),
@@ -112,7 +112,7 @@ class Key4Page extends StatelessWidget {
 
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
-                              child:MiddleText(
+                              child: MiddleScrollText(
                                   text: tr("key4_msg_rebron1")
                               ),
                             ),
@@ -143,7 +143,7 @@ class Key4Page extends StatelessWidget {
                             ),
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
-                                child: MiddleText(
+                                child: MiddleScrollText(
                                   text: tr("key4_msg_rebron2"),
                                 )
                             ),
@@ -159,7 +159,7 @@ class Key4Page extends StatelessWidget {
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
-                              child:MiddleText(
+                              child: MiddleScrollText(
                                   text: tr("key4_msg_meaning_of_christian1")
                               ),
                             ),
@@ -181,7 +181,7 @@ class Key4Page extends StatelessWidget {
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
-                              child:MiddleText(
+                              child: MiddleScrollText(
                                   text: tr("key4_msg_meaning_of_christian2")
                               ),
                             ),
@@ -200,7 +200,7 @@ class Key4Page extends StatelessWidget {
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
-                              child:MiddleText(
+                              child: MiddleScrollText(
                                   text: tr("key4_msg_meaning_of_christian3")
                               ),
                             ),

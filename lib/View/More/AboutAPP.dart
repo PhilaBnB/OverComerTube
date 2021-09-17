@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:over_comer_tube/MyWidget/TextWidget/MiddleAmberBoldText.dart';
-import 'package:over_comer_tube/MyWidget/TextWidget/MiddleText.dart';
+import 'package:over_comer_tube/MyWidget/TextWidget/MiddleScrollText.dart';
 
 class AboutAppPage extends StatelessWidget {
   @override
@@ -34,7 +34,7 @@ class AboutAppPage extends StatelessWidget {
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .9,
-                              child:MiddleText(
+                              child: MiddleScrollText(
                               text: tr("About APP_msg2")),
                             ),
                           ]

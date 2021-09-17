@@ -4,7 +4,7 @@ import 'package:over_comer_tube/MyWidget/DiagramByLangsWidget.dart';
 import 'package:over_comer_tube/MyWidget/MyAdWidget.dart';
 import 'package:over_comer_tube/MyWidget/TextWidget/LargeBoldText.dart';
 import 'package:over_comer_tube/MyWidget/TextWidget/MiddleAmberBoldText.dart';
-import 'package:over_comer_tube/MyWidget/TextWidget/MiddleText.dart';
+import 'package:over_comer_tube/MyWidget/TextWidget/MiddleScrollText.dart';
 import 'package:over_comer_tube/MyWidget/TextWidget/SmallHintText.dart';
 
 class Key1Page extends StatelessWidget {
@@ -47,7 +47,7 @@ class Key1Page extends StatelessWidget {
                             ),
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
-                                child: MiddleText(
+                                child: MiddleScrollText(
                                   text: tr("key1_msg_human_with_gods_shape"),
                                 )
                             ),
@@ -73,7 +73,7 @@ class Key1Page extends StatelessWidget {
                             ),
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
-                                child: MiddleText(
+                                child: MiddleScrollText(
                                   text: tr("key1_msg_human_is_vase"),
                                 )
                             ),
@@ -99,7 +99,7 @@ class Key1Page extends StatelessWidget {
                             ),
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
-                                child: MiddleText(
+                                child: MiddleScrollText(
                                   text: tr("key1_msg_humans_three_parts_1"),
                                 )
                             ),
@@ -116,7 +116,7 @@ class Key1Page extends StatelessWidget {
 
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
-                                child: MiddleText(
+                                child: MiddleScrollText(
                                   text: tr("key1_msg_humans_three_parts_2"),
                                 )
                             ),

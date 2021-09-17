@@ -38,14 +38,19 @@ class MiddleAmberBoldText extends StatelessWidget {
         //     ),
         //   ],
         // ),
-        child: Text(
-          text,
-          style: TextStyle(
-            fontSize: 26,
-            color: Colors.amber[800],
-            // fontWeight: FontWeight.bold,
+        child: Expanded(
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Text(
+              text,
+              style: TextStyle(
+                fontSize: 26,
+                color: Colors.amber[800],
+                // fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
-        ),
+        )
       ),
     );
   }

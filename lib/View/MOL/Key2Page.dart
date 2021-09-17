@@ -4,7 +4,7 @@ import 'package:over_comer_tube/MyWidget/DiagramByLangsWidget.dart';
 import 'package:over_comer_tube/MyWidget/MyAdWidget.dart';
 import 'package:over_comer_tube/MyWidget/TextWidget/LargeBoldText.dart';
 import 'package:over_comer_tube/MyWidget/TextWidget/MiddleAmberBoldText.dart';
-import 'package:over_comer_tube/MyWidget/TextWidget/MiddleText.dart';
+import 'package:over_comer_tube/MyWidget/TextWidget/MiddleScrollText.dart';
 import 'package:over_comer_tube/MyWidget/TextWidget/SmallHintText.dart';
 
 class Key2Page extends StatelessWidget {
@@ -36,7 +36,7 @@ class Key2Page extends StatelessWidget {
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
-                              child: MiddleText(
+                              child: MiddleScrollText(
                                 text: tr("key2_msg_human_two_att"),
                               ),
                             ),
@@ -48,7 +48,7 @@ class Key2Page extends StatelessWidget {
                             ),
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
-                                child: MiddleText(
+                                child: MiddleScrollText(
                                   text: tr("key2_msg_sin"),
                                 )
                             ),
@@ -87,7 +87,7 @@ class Key2Page extends StatelessWidget {
 
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
-                                child: MiddleText(
+                                child: MiddleScrollText(
                                   text: tr("key2_msg_human_fall"),
                                 )
                             ),
@@ -97,7 +97,7 @@ class Key2Page extends StatelessWidget {
                             ),
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
-                                child: MiddleText(
+                                child: MiddleScrollText(
                                   text: tr("key2_msg_sin_caused_spirit_dead"),
                                 )
                             ),
@@ -115,7 +115,7 @@ class Key2Page extends StatelessWidget {
                             ),
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
-                                child: MiddleText(
+                                child: MiddleScrollText(
                                   text: tr("key2_msg_sin_caused_mine_to_rebel"),
                                 )
                             ),
@@ -133,7 +133,7 @@ class Key2Page extends StatelessWidget {
                             ),
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
-                                child: MiddleText(
+                                child: MiddleScrollText(
                                   text: tr("key2_msg_sin_caused_body_to_sin1"),
                                 )
                             ),
@@ -151,7 +151,7 @@ class Key2Page extends StatelessWidget {
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
-                              child:MiddleText(
+                              child:MiddleScrollText(
                                   text: tr("key2_msg_sin_caused_body_to_sin2")
                               ),
                             ),
@@ -165,7 +165,7 @@ class Key2Page extends StatelessWidget {
 
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
-                              child:MiddleText(
+                              child:MiddleScrollText(
                                   text: tr("key2_msg_cannot_save_himself")
                               ),
                             ),

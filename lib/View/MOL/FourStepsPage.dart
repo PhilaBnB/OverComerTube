@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:over_comer_tube/MyWidget/TextWidget/LargeBoldText.dart';
 import 'package:over_comer_tube/MyWidget/TextWidget/MiddleAmberBoldText.dart';
-import 'package:over_comer_tube/MyWidget/TextWidget/MiddleText.dart';
+import 'package:over_comer_tube/MyWidget/TextWidget/MiddleScrollText.dart';
 import 'package:over_comer_tube/MyWidget/TextWidget/SmallHintText.dart';
 
 class FourStepsPage extends StatelessWidget {
@@ -27,7 +27,7 @@ class FourStepsPage extends StatelessWidget {
                           children: [
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
-                              child: MiddleText(
+                              child: MiddleScrollText(
                                 text: tr("key4_msg_what_must_you_do_now2"),
                               ),
                             ),
@@ -40,7 +40,7 @@ class FourStepsPage extends StatelessWidget {
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
-                              child: MiddleText(
+                              child: MiddleScrollText(
                                 text: tr("key4_msg_turn_heart"),
                               ),
                             ),
@@ -65,7 +65,7 @@ class FourStepsPage extends StatelessWidget {
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
-                              child: MiddleText(
+                              child: MiddleScrollText(
                                 text: tr("key4_msg_believe"),
                               ),
                             ),
@@ -91,7 +91,7 @@ class FourStepsPage extends StatelessWidget {
                             ),
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
-                                child: MiddleText(
+                                child: MiddleScrollText(
                                   text: tr("key4_msg_confess"),
                                 )
                             ),
@@ -117,7 +117,7 @@ class FourStepsPage extends StatelessWidget {
 
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
-                              child:MiddleText(
+                              child:MiddleScrollText(
                                   text: tr("key4_msg_baptized1")
                               ),
                             ),
@@ -135,7 +135,7 @@ class FourStepsPage extends StatelessWidget {
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
-                              child:MiddleText(
+                              child:MiddleScrollText(
                                   text: tr("key4_msg_baptized2")
                               ),
                             ),
@@ -168,7 +168,7 @@ class FourStepsPage extends StatelessWidget {
 
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
-                              child:MiddleText(
+                              child:MiddleScrollText(
                                   text: tr("key4_msg_pray2")
                               ),
                             ),
