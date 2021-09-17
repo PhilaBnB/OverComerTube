@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:over_comer_tube/MyWidget/DiagramByLangsWidget.dart';
 import 'package:over_comer_tube/MyWidget/MyAdWidget.dart';
 import 'package:over_comer_tube/MyWidget/TextWidget/LargeBoldText.dart';
 import 'package:over_comer_tube/MyWidget/TextWidget/MiddleAmberBoldText.dart';
@@ -92,7 +93,7 @@ class Key2Page extends StatelessWidget {
                             ),
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
-                                child: Image.asset('assets/three_part_human6.png')
+                                child: DiagramByLangsWidget(buildContext: context, diagram:'key2diagram')
                             ),
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,

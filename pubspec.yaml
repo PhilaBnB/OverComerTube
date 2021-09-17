@@ -15,7 +15,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.0.0+2
+version: 1.0.2
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -96,14 +96,23 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
   assets:
   #  - assets/backdrop.png
-    - assets/three_part_human2.png
-    - assets/three_part_human4.png
-    - assets/three_part_human5.png
-    - assets/three_part_human6.png
-    - assets/three_part_human7.png
-    - assets/three_part_human9.png
-    - assets/three_part_human10.png
-    - assets/three_part_human11.png
-    - assets/three_part_human12.png
+    - assets/three_part_human.png
+    - assets/key1diagram1_en.png
+    - assets/key1diagram1_tw.png
+    - assets/key1diagram2_en.png
+    - assets/key1diagram2_tw.png
+    - assets/key2diagram_en.png
+    - assets/key2diagram_tw.png
+    - assets/key3diagram1_en.png
+    - assets/key3diagram1_tw.png
+    - assets/key3diagram2_en.png
+    - assets/key3diagram2_tw.png
+    - assets/key4diagram0_en.png
+    - assets/key4diagram0_tw.png
+    - assets/key4diagram1_en.png
+    - assets/key4diagram1_tw.png
+    - assets/key4diagram2_en.png
+    - assets/key4diagram2_tw.png
+
     - resources/langs/zh-TW.json
     - resources/langs/en-US.json
