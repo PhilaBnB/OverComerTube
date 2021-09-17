@@ -12,7 +12,19 @@ class Key0Page extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          appBar: AppBar(title: Text(tr("Preface")),backgroundColor: Colors.black87,),
+          appBar: AppBar(
+            title: Text(tr("Preface")),
+            backgroundColor: Colors.black87,
+            actions: [
+              IconButton(
+                icon: Icon(
+                  Icons.navigate_next,
+                  color: Colors.white,
+                ),
+                onPressed: () => Navigator.of(context).pushNamed('/kay1'),
+              ),
+            ],
+          ),
           body: CustomScrollView(
             slivers: [
               SliverAppBar(// 使用 SliverAppBar
@@ -36,6 +48,7 @@ class Key0Page extends StatelessWidget {
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleScrollText(
+                                buildContext: context,
                                 text: tr("msg_the_reason_people_live_1"),
                               )
                             ),
@@ -43,6 +56,7 @@ class Key0Page extends StatelessWidget {
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleScrollText(
+                                buildContext: context,
                                 text: tr("msg_the_reason_people_live_2"),
                               )
                             ),
@@ -50,6 +64,7 @@ class Key0Page extends StatelessWidget {
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleAmberBoldText(
+                                buildContext: context,
                                 text: tr("msg_the_reason_people_live_q1"),
                               ),
                             ),
@@ -64,6 +79,7 @@ class Key0Page extends StatelessWidget {
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
                                 child: MiddleScrollText(
+                                  buildContext: context,
                                   text: tr("msg_gods_plan"),
                                 )
                             ),
@@ -77,6 +93,7 @@ class Key0Page extends StatelessWidget {
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleAmberBoldText(
+                                buildContext: context,
                                 text: tr("msg_gods_plan_q2"),
                               ),
                             ),
@@ -91,6 +108,7 @@ class Key0Page extends StatelessWidget {
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
                                 child: MiddleScrollText(
+                                  buildContext: context,
                                   text: tr("msg_four_keys_1"),
                                 )
                             ),
@@ -98,6 +116,7 @@ class Key0Page extends StatelessWidget {
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
                                 child: MiddleScrollText(
+                                  buildContext: context,
                                   text: tr("msg_four_keys_2"),
                                 )
                             ),

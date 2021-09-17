@@ -26,16 +26,20 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(
-    BlocProvider(
-      create: (context) => MyBloc(),
-        child: EasyLocalization(
-          child: MyApp(),
-          supportedLocales: [Locale('zh', 'TW'), Locale('en', 'US')],
-          path: 'resources/langs',
-        )
-    ),
-  );
+  SystemChrome
+      .setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown])
+      .then((_) {
+        runApp(
+          BlocProvider(
+            create: (context) => MyBloc(),
+            child: EasyLocalization(
+              child: MyApp(),
+              supportedLocales: [Locale('zh', 'TW'), Locale('en', 'US')],
+              path: 'resources/langs',
+            )
+        ),
+        );
+      });//Set and lock screen portrait
 }
 
 class MyApp extends StatelessWidget {

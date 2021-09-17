@@ -13,7 +13,18 @@ class Key3Page extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          appBar: AppBar(title: Text(tr("key3_title")),backgroundColor: Colors.black87,),
+          appBar: AppBar(
+            title: Text(tr("key3_title")),
+            backgroundColor: Colors.black87,
+            actions: [
+              IconButton(
+                icon: Icon(
+                  Icons.navigate_next,
+                  color: Colors.white,
+                ),
+                onPressed: () => Navigator.of(context).pushNamed('/kay4'),
+              ),
+            ],),
           body: CustomScrollView(
             slivers: [
               SliverAppBar(                        // 使用 SliverAppBar
@@ -37,6 +48,7 @@ class Key3Page extends StatelessWidget {
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleScrollText(
+                                buildContext: context,
                                 text: tr("key3_msg_who1"),
                               ),
                             ),
@@ -44,6 +56,7 @@ class Key3Page extends StatelessWidget {
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleAmberBoldText(
+                                buildContext: context,
                                 text: tr("key3_verse_who1"),
                               ),
                             ),
@@ -56,6 +69,7 @@ class Key3Page extends StatelessWidget {
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleScrollText(
+                                buildContext: context,
                                 text: tr("key3_msg_who2"),
                               ),
                             ),
@@ -63,6 +77,7 @@ class Key3Page extends StatelessWidget {
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleAmberBoldText(
+                                buildContext: context,
                                 text: tr("key3_verse_who2"),
                               ),
                             ),
@@ -77,6 +92,7 @@ class Key3Page extends StatelessWidget {
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
                                 child: MiddleScrollText(
+                                  buildContext: context,
                                   text: tr("key3_msg_who3"),
                                 )
                             ),
@@ -87,6 +103,7 @@ class Key3Page extends StatelessWidget {
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
                                 child: MiddleScrollText(
+                                  buildContext: context,
                                   text: tr("key3_msg_who4"),
                                 )
                             ),
@@ -100,18 +117,21 @@ class Key3Page extends StatelessWidget {
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleScrollText(
+                                  buildContext: context,
                                   text: tr("key3_msg_death_of_godman")
                               ),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleScrollText(
+                                  buildContext: context,
                                   text: tr("key3_msg_lamb")
                               ),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child:MiddleAmberBoldText(
+                                  buildContext: context,
                                   text: tr("key3_verse_lamb")
                               ),
                             ),
@@ -124,12 +144,14 @@ class Key3Page extends StatelessWidget {
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
                                 child: MiddleScrollText(
+                                  buildContext: context,
                                   text: tr("key3_msg_brass_serpent"),
                                 )
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child:MiddleAmberBoldText(
+                                  buildContext: context,
                                   text: tr("key3_verse_brass_serpent")
                               ),
                             ),
@@ -142,12 +164,14 @@ class Key3Page extends StatelessWidget {
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
                                 child: MiddleScrollText(
+                                  buildContext: context,
                                   text: tr("key3_msg_grain_of_wheat"),
                                 )
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child:MiddleAmberBoldText(
+                                  buildContext: context,
                                   text: tr("key3_verse_grain_of_wheat")
                               ),
                             ),
@@ -160,6 +184,7 @@ class Key3Page extends StatelessWidget {
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleScrollText(
+                                  buildContext: context,
                                   text: tr("key3_msg_grain_of_wheat2")
                               ),
                             ),

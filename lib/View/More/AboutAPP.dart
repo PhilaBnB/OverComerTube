@@ -29,13 +29,15 @@ class AboutAppPage extends StatelessWidget {
                           children: [
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .9,
-                              child:MiddleAmberBoldText(
-                              text: tr("About APP_msg1")),
+                              child: MiddleAmberBoldText(
+                                  buildContext: context,
+                                  text: tr("About APP_msg1")),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .9,
                               child: MiddleScrollText(
-                              text: tr("About APP_msg2")),
+                                buildContext: context,
+                                text: tr("About APP_msg2")),
                             ),
                           ]
                         )

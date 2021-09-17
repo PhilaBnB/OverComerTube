@@ -12,7 +12,18 @@ class Key1Page extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          appBar: AppBar(title: Text(tr("key1_title")),backgroundColor: Colors.black87,),
+          appBar: AppBar(
+            title: Text(tr("key1_title")),
+            backgroundColor: Colors.black87,
+            actions: [
+              IconButton(
+                icon: Icon(
+                  Icons.navigate_next,
+                  color: Colors.white,
+                ),
+                onPressed: () => Navigator.of(context).pushNamed('/kay2'),
+              ),
+            ],),
           body: CustomScrollView(
             slivers: [
               SliverAppBar(                        // 使用 SliverAppBar
@@ -36,6 +47,7 @@ class Key1Page extends StatelessWidget {
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleAmberBoldText(
+                                buildContext: context,
                                 text: tr("key1_verse_human_with_gods_shape"),
                               ),
                             ),
@@ -48,6 +60,7 @@ class Key1Page extends StatelessWidget {
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
                                 child: MiddleScrollText(
+                                  buildContext: context,
                                   text: tr("key1_msg_human_with_gods_shape"),
                                 )
                             ),
@@ -62,6 +75,7 @@ class Key1Page extends StatelessWidget {
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleAmberBoldText(
+                                buildContext: context,
                                 text: tr("key1_verse_human_is_vase"),
                               ),
                             ),
@@ -74,6 +88,7 @@ class Key1Page extends StatelessWidget {
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
                                 child: MiddleScrollText(
+                                  buildContext: context,
                                   text: tr("key1_msg_human_is_vase"),
                                 )
                             ),
@@ -88,6 +103,7 @@ class Key1Page extends StatelessWidget {
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleAmberBoldText(
+                                buildContext: context,
                                 text: tr("key1_verse_humans_three_parts"),
                               ),
                             ),
@@ -100,6 +116,7 @@ class Key1Page extends StatelessWidget {
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
                                 child: MiddleScrollText(
+                                  buildContext: context,
                                   text: tr("key1_msg_humans_three_parts_1"),
                                 )
                             ),
@@ -117,6 +134,7 @@ class Key1Page extends StatelessWidget {
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
                                 child: MiddleScrollText(
+                                  buildContext: context,
                                   text: tr("key1_msg_humans_three_parts_2"),
                                 )
                             ),
@@ -129,6 +147,7 @@ class Key1Page extends StatelessWidget {
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleAmberBoldText(
+                                buildContext: context,
                                 text: tr("key1_msg_gods_economic"),
                               ),
                             ),

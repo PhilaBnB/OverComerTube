@@ -13,7 +13,18 @@ class Key2Page extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          appBar: AppBar(title: Text(tr("key2_title")),backgroundColor: Colors.black87,),
+          appBar: AppBar(
+            title: Text(tr("key2_title")),
+            backgroundColor: Colors.black87,
+            actions: [
+              IconButton(
+                icon: Icon(
+                  Icons.navigate_next,
+                  color: Colors.white,
+                ),
+                onPressed: () => Navigator.of(context).pushNamed('/kay3'),
+              ),
+            ],),
           body: CustomScrollView(
             slivers: [
               SliverAppBar(                        // 使用 SliverAppBar
@@ -37,6 +48,7 @@ class Key2Page extends StatelessWidget {
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleScrollText(
+                                buildContext: context,
                                 text: tr("key2_msg_human_two_att"),
                               ),
                             ),
@@ -49,12 +61,14 @@ class Key2Page extends StatelessWidget {
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
                                 child: MiddleScrollText(
+                                  buildContext: context,
                                   text: tr("key2_msg_sin"),
                                 )
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleAmberBoldText(
+                                buildContext: context,
                                 text: tr("key2_verse_sin1"),
                               ),
                             ),
@@ -68,6 +82,7 @@ class Key2Page extends StatelessWidget {
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleAmberBoldText(
+                                buildContext: context,
                                 text: tr("key2_verse_sin2"),
                               ),
                             ),
@@ -88,6 +103,7 @@ class Key2Page extends StatelessWidget {
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
                                 child: MiddleScrollText(
+                                  buildContext: context,
                                   text: tr("key2_msg_human_fall"),
                                 )
                             ),
@@ -98,12 +114,14 @@ class Key2Page extends StatelessWidget {
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
                                 child: MiddleScrollText(
+                                  buildContext: context,
                                   text: tr("key2_msg_sin_caused_spirit_dead"),
                                 )
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child:MiddleAmberBoldText(
+                                  buildContext: context,
                                   text: tr("key2_verse_sin_caused_spirit_dead")
                               ),
                             ),
@@ -116,12 +134,14 @@ class Key2Page extends StatelessWidget {
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
                                 child: MiddleScrollText(
+                                  buildContext: context,
                                   text: tr("key2_msg_sin_caused_mine_to_rebel"),
                                 )
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child:MiddleAmberBoldText(
+                                  buildContext: context,
                                   text: tr("key2_verse_sin_caused_mine_to_rebel")
                               ),
                             ),
@@ -134,12 +154,14 @@ class Key2Page extends StatelessWidget {
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
                                 child: MiddleScrollText(
+                                  buildContext: context,
                                   text: tr("key2_msg_sin_caused_body_to_sin1"),
                                 )
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child:MiddleAmberBoldText(
+                                  buildContext: context,
                                   text: tr("key2_verse_sin_caused_body_to_sin")
                               ),
                             ),
@@ -152,6 +174,7 @@ class Key2Page extends StatelessWidget {
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child:MiddleScrollText(
+                                  buildContext: context,
                                   text: tr("key2_msg_sin_caused_body_to_sin2")
                               ),
                             ),
@@ -166,6 +189,7 @@ class Key2Page extends StatelessWidget {
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child:MiddleScrollText(
+                                  buildContext: context,
                                   text: tr("key2_msg_cannot_save_himself")
                               ),
                             ),

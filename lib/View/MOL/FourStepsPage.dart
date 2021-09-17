@@ -28,6 +28,7 @@ class FourStepsPage extends StatelessWidget {
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleScrollText(
+                                buildContext: context,
                                 text: tr("key4_msg_what_must_you_do_now2"),
                               ),
                             ),
@@ -41,6 +42,7 @@ class FourStepsPage extends StatelessWidget {
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleScrollText(
+                                buildContext: context,
                                 text: tr("key4_msg_turn_heart"),
                               ),
                             ),
@@ -48,6 +50,7 @@ class FourStepsPage extends StatelessWidget {
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleAmberBoldText(
+                                buildContext: context,
                                 text: tr("key4_verse_turn_heart"),
                               ),
                             ),
@@ -66,6 +69,7 @@ class FourStepsPage extends StatelessWidget {
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleScrollText(
+                                buildContext: context,
                                 text: tr("key4_msg_believe"),
                               ),
                             ),
@@ -73,6 +77,7 @@ class FourStepsPage extends StatelessWidget {
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleAmberBoldText(
+                                buildContext: context,
                                 text: tr("key4_verse_believe"),
                               ),
                             ),
@@ -92,6 +97,7 @@ class FourStepsPage extends StatelessWidget {
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
                                 child: MiddleScrollText(
+                                  buildContext: context,
                                   text: tr("key4_msg_confess"),
                                 )
                             ),
@@ -99,6 +105,7 @@ class FourStepsPage extends StatelessWidget {
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleAmberBoldText(
+                                buildContext: context,
                                 text: tr("key4_verse_confess"),
                               ),
                             ),
@@ -118,12 +125,14 @@ class FourStepsPage extends StatelessWidget {
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child:MiddleScrollText(
+                                  buildContext: context,
                                   text: tr("key4_msg_baptized1")
                               ),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child:MiddleAmberBoldText(
+                                  buildContext: context,
                                   text: tr("key4_verse_baptized1")
                               ),
                             ),
@@ -136,12 +145,14 @@ class FourStepsPage extends StatelessWidget {
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child:MiddleScrollText(
+                                  buildContext: context,
                                   text: tr("key4_msg_baptized2")
                               ),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child:MiddleAmberBoldText(
+                                  buildContext: context,
                                   text: tr("key4_verse_baptized2")
                               ),
                             ),
@@ -162,6 +173,7 @@ class FourStepsPage extends StatelessWidget {
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child:MiddleAmberBoldText(
+                                  buildContext: context,
                                   text: tr("key4_msg_pray1")
                               ),
                             ),
@@ -169,6 +181,7 @@ class FourStepsPage extends StatelessWidget {
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child:MiddleScrollText(
+                                  buildContext: context,
                                   text: tr("key4_msg_pray2")
                               ),
                             ),
