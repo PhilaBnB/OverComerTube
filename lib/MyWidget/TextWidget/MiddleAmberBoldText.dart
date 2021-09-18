@@ -30,22 +30,18 @@ class MiddleAmberBoldText extends StatelessWidget {
           child: Container(
               width: double.infinity,
               padding: EdgeInsets.symmetric(vertical: verticalPadding, horizontal: horizontalPadding),
-              child: Expanded(
-                  child:(
-                      Scrollbar(
-                        child: SingleChildScrollView(
-                          scrollDirection: Axis.horizontal,
-                          child: Text(
-                            text,
-                            style: TextStyle(
-                              fontSize: 26,
-                              color: Colors.amber[800]
-                              // fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      )
-                  )
+              child: Scrollbar(
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Text(
+                    text,
+                    style: TextStyle(
+                        fontSize: 26,
+                        color: Colors.amber[800]
+                      // fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
               )
           ),
         );
@@ -71,22 +67,18 @@ class MiddleAmberBoldText extends StatelessWidget {
           child: Container(
               width: double.infinity,
               padding: EdgeInsets.symmetric(vertical: verticalPadding, horizontal: horizontalPadding),
-              child: Expanded(
-                  child:(
-                      Scrollbar(
-                        child: SingleChildScrollView(
-                          scrollDirection: Axis.horizontal,
-                          child: Text(
-                            text,
-                            style: TextStyle(
-                                fontSize: 26,
-                                color: Colors.amber[800]
-                              // fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      )
-                  )
+              child: Scrollbar(
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Text(
+                    text,
+                    style: TextStyle(
+                        fontSize: 26,
+                        color: Colors.amber[800]
+                      // fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
               )
           ),
         );
