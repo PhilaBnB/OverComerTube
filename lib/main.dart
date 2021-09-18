@@ -258,7 +258,7 @@ bool isOver24(int _timeStamp) {
 
   if (diff.inDays > 0) {
     if (diff.inDays < 1) {
-      print("距離上次更新只過了"+diff.inHours.toString()+"小時");
+      print("距離上次更新只過了"+diff.inHours.toString()+"小時"+diff.inMinutes.toString()+"分鐘");
       return false;
     } else {
       print("距離上次更新超過了一天");
@@ -266,7 +266,7 @@ bool isOver24(int _timeStamp) {
     }
   }
   else{
-    print("距離上次更新只過了"+diff.inHours.toString()+"小時");
+    print("距離上次更新只過了"+diff.inHours.toString()+"小時"+diff.inMinutes.toString()+"分鐘");
     return false;
   }
 }
