@@ -15,6 +15,8 @@ import 'package:over_comer_tube/View/MOL/Key3Page.dart';
 import 'package:over_comer_tube/View/MOL/Key4Page.dart';
 import 'package:over_comer_tube/View/More/MorePage.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'BlocEvent.dart';
 import 'dart:io';
@@ -75,6 +77,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   final icons = [Icons.vpn_key];
   final ref = FirebaseDatabase(databaseURL: 'https://overcomertube-default-rtdb.asia-southeast1.firebasedatabase.app').reference();
+  int _timeStamp = 0;
+
+  @override
+  void initState() {
+    getCountdown24();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -82,16 +90,20 @@ class _MyHomePageState extends State<MyHomePage> {
     //多語需在context作用範圍內定義，故相關變數須放置於context作用範圍內，否則會無法更換語言
 
     checkVersion().then((version){
-      ref.child("version").once().then((DataSnapshot data_version){
-        if(version != data_version.value){
-          ref.child("playstore_url").once().then((DataSnapshot data_url){
-            showUpdateDialog(context, data_url.value);
-          });
-        }
-        else{
-          print("You are in the latest version : "+version);
-        }
-      });
+      if(isOver24(_timeStamp)){
+        ref.child("version").once().then((DataSnapshot data_version){
+          if(version != data_version.value){
+            ref.child("playstore_url").once().then((DataSnapshot data_url){
+              showUpdateDialog(context, data_url.value);
+              setCountdown24();
+            });
+          }
+          else{
+            print("You are in the latest version : "+version);
+          }
+        });
+      }
+
     }).catchError((error){
       print(error);
     });
@@ -135,7 +147,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                     height: 80,
                                     margin: EdgeInsets.only(bottom: 0.0),
                                     child: Card(
-                                      child:MyAdWidget()
+                                        elevation: 10,
+                                        child:MyAdWidget()
                                     )
                                   );
                                 } else {
@@ -146,14 +159,16 @@ class _MyHomePageState extends State<MyHomePage> {
                                     child: Container(
                                       height: 80,
                                       child:Card(
-                                        child: Container(
-                                          alignment: Alignment.centerLeft,
-                                          height: 80,
-                                          child:ListTile(
-                                            leading: Icon(icons[0]),
-                                            title: Text(titles[index]),
-                                          ),
-                                        )
+                                          // color: Color(0xBFFF8F00),
+                                          elevation: 10,
+                                          child: Container(
+                                            alignment: Alignment.centerLeft,
+                                            height: 80,
+                                            child:ListTile(
+                                              leading: Icon(icons[0]),
+                                              title: Text(titles[index],style: TextStyle(fontSize: 20),),
+                                            ),
+                                          )
                                       ),
                                     )
                                   );
@@ -162,10 +177,35 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ),
                         Container(
-                            color: Color.fromRGBO(25, 27, 47, 1.0),
-                            child: ListTile(
-                              title: Text("- More -", style: TextStyle(color: Colors.white, fontSize: 24.0, fontWeight: FontWeight.bold)),
-                              onTap: () => Navigator.of(context).pushNamed('/More'),
+                            width: MediaQuery.of(context).size.width * .5,
+                            child: GestureDetector(
+                              onTap:() => Navigator.of(context).pushNamed('/More'),
+                              child: Container(
+                                width: double.infinity,
+                                alignment: Alignment.center,
+                                margin: EdgeInsets.symmetric(vertical: 16),
+                                padding:
+                                EdgeInsets.symmetric(vertical: 16, horizontal: 30),
+                                decoration: BoxDecoration(
+                                  color: Colors.amber[800],
+                                  borderRadius: BorderRadius.circular(30),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      offset: Offset(0, 5),
+                                      blurRadius: 10,
+                                      color: Color(0xFF666666).withOpacity(.8),
+                                    ),
+                                  ],
+                                ),
+                                child: Text(
+                                  "- More -",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 26,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
                             )
                         ),
                       ],
@@ -192,6 +232,43 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
+  Future<void> getCountdown24() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _timeStamp = prefs.getInt("timeStamp") ?? 1631203200;//2021.09.10友訊離職日
+      var date = DateTime.fromMillisecondsSinceEpoch(_timeStamp * 1000);
+      print("上次更新時間: "+DateFormat.yMMMd().format(date));
+    });
+  }
+
+  setCountdown24() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    var currentTimeStamp = DateTime.now();
+    print("本次更新時間:"+currentTimeStamp.toString());
+    Timestamp myTimeStamp = Timestamp.fromDate(currentTimeStamp); //To TimeStamp
+    prefs.setInt("timeStamp", myTimeStamp.seconds);
+  }
+
+}
+//Converting timestamp
+bool isOver24(int _timeStamp) {
+  var now = DateTime.now();
+  var date = DateTime.fromMillisecondsSinceEpoch(_timeStamp * 1000);
+  var diff = now.difference(date);
+
+  if (diff.inDays > 0) {
+    if (diff.inDays < 1) {
+      print("距離上次更新只過了"+diff.inHours.toString()+"小時");
+      return false;
+    } else {
+      print("距離上次更新超過了一天");
+      return true;
+    }
+  }
+  else{
+    print("距離上次更新只過了"+diff.inHours.toString()+"小時");
+    return false;
+  }
 }
 Future<String> checkVersion() async {
   PackageInfo packageInfo = await PackageInfo.fromPlatform();

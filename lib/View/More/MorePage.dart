@@ -49,6 +49,7 @@ class MorePage extends StatelessWidget {
                                   height: 80,
                                   margin: EdgeInsets.only(bottom: 0.0),
                                   child: Card(
+                                      elevation: 10,
                                       child:MyAdWidget()
                                   )
                               );
@@ -58,11 +59,12 @@ class MorePage extends StatelessWidget {
                                   child: Container(
                                     height: 80,
                                     child:Card(
+                                        elevation: 10,
                                         child: Container(
                                           alignment: Alignment.centerLeft,
                                           height: 80,
                                           child:ListTile(
-                                            title: Text(titles[index]),
+                                            title: Text(titles[index],style: TextStyle(fontSize: 20),),
                                           ),
                                         )
                                     ),
@@ -129,10 +131,10 @@ showLangDialog(BuildContext context){
 void setLanguageByIndex(BuildContext context, int selectLang) {
   switch (selectLang){
     case 0:
-      context.locale = Locale('zh', 'TW');
+      context.setLocale(Locale('zh', 'TW'));
       break;
     case 1:
-      context.locale = Locale('en', 'US');
+      context.setLocale(Locale('en', 'US'));
       break;
   }
 }
