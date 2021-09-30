@@ -1,6 +1,7 @@
 <p align="center">
-  <img src="https://github.com/PhilaBnB/OverComerTube/blob/OCT2021/mysteryofhuman.png?raw=true" alt="Sublime's custom image"/>
+  <img src="https://github.com/PhilaBnB/OverComerTube/blob/OCT2021/mysteryofhuman.png?raw=true" alt="Sublime's custom image" width="250" />
 </p>
+
 ### Play store link : https://play.google.com/store/apps/details?id=com.philabnb.over_comer_tube
 
 **簡介**
