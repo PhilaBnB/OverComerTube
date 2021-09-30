@@ -4,7 +4,10 @@
 
 ### Play store link : https://play.google.com/store/apps/details?id=com.philabnb.over_comer_tube
 
-**簡介**
+<p style="text-align: center;"> 
+  **簡介** 
+</p>
+
 <br/>
 為推廣聖經真理所設計之APP，目前以"人生的奧秘"雙語電子書為主要內容，正在開發聖經推薦的功能。<br/>
 <img src="https://github.com/PhilaBnB/OverComerTube/blob/OCT2021/116518.jpg" width="250" />
