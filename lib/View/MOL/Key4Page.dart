@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:over_comer_tube/MyWidget/DiagramByLangsWidget.dart';
 import 'package:over_comer_tube/MyWidget/MyAdWidget.dart';
@@ -7,6 +6,7 @@ import 'package:over_comer_tube/MyWidget/TextWidget/MiddleAmberBoldText.dart';
 import 'package:over_comer_tube/MyWidget/RoundedButton.dart';
 import 'package:over_comer_tube/MyWidget/TextWidget/MiddleScrollText.dart';
 import 'package:over_comer_tube/MyWidget/TextWidget/SmallHintText.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Key4Page extends StatelessWidget {
 
@@ -14,11 +14,11 @@ class Key4Page extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          appBar: AppBar(title: Text(tr("key4_title")),backgroundColor: Colors.black87,),
+          appBar: AppBar(title: Text(AppLocalizations.of(context).key4_title),backgroundColor: Colors.black87,),
           body: CustomScrollView(
             slivers: [
               SliverAppBar(                        // 使用 SliverAppBar
-                title: Text(tr("key4_title_t1")+"\n"+tr("key4_title_t2")),
+                title: Text(AppLocalizations.of(context).key4_title_t1+"\n"+AppLocalizations.of(context).key4_title_t2),
                 backgroundColor: Colors.black87,
                 expandedHeight: 100.0,
                 toolbarHeight: 100.0,
@@ -32,14 +32,14 @@ class Key4Page extends StatelessWidget {
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .9,
                               child:LargeBoldText(
-                                  text: tr("key4_title_twice_become")
+                                  text: AppLocalizations.of(context).key4_title_twice_become
                               ),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleScrollText(
                                 buildContext: context,
-                                text: tr("key4_msg_twice_become1"),
+                                text: AppLocalizations.of(context).key4_msg_twice_become1,
                               ),
                             ),
 
@@ -47,20 +47,20 @@ class Key4Page extends StatelessWidget {
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleAmberBoldText(
                                 buildContext: context,
-                                text: tr("key4_verse_twice_become1"),
+                                text: AppLocalizations.of(context).key4_verse_twice_become1,
                               ),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: SmallHintText(
-                                text: tr("key4_verse_twice_become1_h1"),
+                                text: AppLocalizations.of(context).key4_verse_twice_become1_h1,
                               ),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleScrollText(
                                 buildContext: context,
-                                text: tr("key4_msg_twice_become2"),
+                                text: AppLocalizations.of(context).key4_msg_twice_become2,
                               ),
                             ),
 
@@ -68,13 +68,13 @@ class Key4Page extends StatelessWidget {
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleAmberBoldText(
                                 buildContext: context,
-                                text: tr("key4_verse_twice_become2"),
+                                text: AppLocalizations.of(context).key4_verse_twice_become2,
                               ),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: SmallHintText(
-                                text: tr("key4_verse_twice_become2_h1"),
+                                text: AppLocalizations.of(context).key4_verse_twice_become2_h1,
                               ),
                             ),
 
@@ -83,7 +83,7 @@ class Key4Page extends StatelessWidget {
                                 width: MediaQuery.of(context).size.width * .8,
                                 child: MiddleScrollText(
                                   buildContext: context,
-                                  text: tr("key4_msg_twice_become3"),
+                                  text: AppLocalizations.of(context).key4_msg_twice_become3,
                                 )
                             ),
                             SizedBox(
@@ -94,26 +94,26 @@ class Key4Page extends StatelessWidget {
                                 width: MediaQuery.of(context).size.width * .8,
                                 child: MiddleScrollText(
                                   buildContext: context,
-                                  text: tr("key4_msg_twice_become4"),
+                                  text: AppLocalizations.of(context).key4_msg_twice_become4,
                                 )
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleAmberBoldText(
                                 buildContext: context,
-                                text: tr("key4_verse_twice_become3"),
+                                text: AppLocalizations.of(context).key4_verse_twice_become3,
                               ),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: SmallHintText(
-                                text: tr("key4_verse_twice_become3_h1"),
+                                text: AppLocalizations.of(context).key4_verse_twice_become3_h1,
                               ),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .9,
                               child:LargeBoldText(
-                                  text: tr("key4_title_rebron")
+                                  text: AppLocalizations.of(context).key4_title_rebron
                               ),
                             ),
 
@@ -121,20 +121,20 @@ class Key4Page extends StatelessWidget {
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleScrollText(
                                   buildContext: context,
-                                  text: tr("key4_msg_rebron1")
+                                  text: AppLocalizations.of(context).key4_msg_rebron1
                               ),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child:MiddleAmberBoldText(
                                   buildContext: context,
-                                  text: tr("key4_verse_rebron1")
+                                  text: AppLocalizations.of(context).key4_verse_rebron1
                               ),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: SmallHintText(
-                                text: tr("key4_verse_rebron1_h1"),
+                                text: AppLocalizations.of(context).key4_verse_rebron1_h1,
                               ),
                             ),
 
@@ -142,20 +142,20 @@ class Key4Page extends StatelessWidget {
                               width: MediaQuery.of(context).size.width * .8,
                               child:MiddleAmberBoldText(
                                   buildContext: context,
-                                  text: tr("key4_verse_rebron2")
+                                  text: AppLocalizations.of(context).key4_verse_rebron2
                               ),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: SmallHintText(
-                                text: tr("key4_verse_rebron2_h1"),
+                                text: AppLocalizations.of(context).key4_verse_rebron2_h1,
                               ),
                             ),
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
                                 child: MiddleScrollText(
                                   buildContext: context,
-                                  text: tr("key4_msg_rebron2"),
+                                  text: AppLocalizations.of(context).key4_msg_rebron2,
                                 )
                             ),
                             SizedBox(
@@ -165,27 +165,27 @@ class Key4Page extends StatelessWidget {
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .9,
                               child:LargeBoldText(
-                                  text: tr("key4_title_meaning_of_christian")
+                                  text: AppLocalizations.of(context).key4_title_meaning_of_christian
                               ),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleScrollText(
                                   buildContext: context,
-                                  text: tr("key4_msg_meaning_of_christian1")
+                                  text: AppLocalizations.of(context).key4_msg_meaning_of_christian1
                               ),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child:MiddleAmberBoldText(
                                   buildContext: context,
-                                  text: tr("key4_verse_meaning_of_christian1")
+                                  text: AppLocalizations.of(context).key4_verse_meaning_of_christian1
                               ),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: SmallHintText(
-                                text: tr("key4_verse_meaning_of_christian1_h1"),
+                                text: AppLocalizations.of(context).key4_verse_meaning_of_christian1_h1,
                               ),
                             ),
                             SizedBox(
@@ -196,7 +196,7 @@ class Key4Page extends StatelessWidget {
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleScrollText(
                                   buildContext: context,
-                                  text: tr("key4_msg_meaning_of_christian2")
+                                  text: AppLocalizations.of(context).key4_msg_meaning_of_christian2
                               ),
                             ),
 
@@ -204,20 +204,20 @@ class Key4Page extends StatelessWidget {
                               width: MediaQuery.of(context).size.width * .8,
                               child:MiddleAmberBoldText(
                                   buildContext: context,
-                                  text: tr("key4_verse_meaning_of_christian2")
+                                  text: AppLocalizations.of(context).key4_verse_meaning_of_christian2
                               ),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: SmallHintText(
-                                text: tr("key4_verse_meaning_of_christian2_h1"),
+                                text: AppLocalizations.of(context).key4_verse_meaning_of_christian2_h1,
                               ),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleScrollText(
                                   buildContext: context,
-                                  text: tr("key4_msg_meaning_of_christian3")
+                                  text: AppLocalizations.of(context).key4_msg_meaning_of_christian3
                               ),
                             ),
                             SizedBox(
@@ -227,7 +227,7 @@ class Key4Page extends StatelessWidget {
                                   press: (){
                                     Navigator.of(context).pushNamed('/fourSteps');
                                   },
-                                  text: tr("key4_msg_what_must_you_do_now1")
+                                  text: AppLocalizations.of(context).key4_msg_what_must_you_do_now1
                               ),
                             ),
                           ],

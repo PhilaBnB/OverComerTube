@@ -1,20 +1,25 @@
 
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:over_comer_tube/BlocEvent.dart';
 import 'package:over_comer_tube/MyWidget/MyAdWidget.dart';
 import 'package:over_comer_tube/MyWidget/SingleSelector.dart';
+import 'package:over_comer_tube/main.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
   List<String> Langs = [
     "中文",
     "English",
   ];
 
 class MorePage extends StatelessWidget {
-  final titles = [tr("About Developer"),tr("Language"),tr("About APP")];
 
   @override
   Widget build(BuildContext context) {
+    final titles = [
+      AppLocalizations.of(context).about_developer,
+      AppLocalizations.of(context).language,
+      AppLocalizations.of(context).about_app
+    ];
     return Scaffold(
         backgroundColor: Colors.white,
         body: BlocListener<MyBloc,MyState>(
@@ -29,7 +34,7 @@ class MorePage extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(top: 40.0, left: 10.0, right: 10.0, bottom: 0.0),
                       child: Text(
-                          tr("More"),
+                          AppLocalizations.of(context).more,
                           style: TextStyle(
                               color: Colors.black87,
                               fontSize: 30,
@@ -105,15 +110,15 @@ showLangDialog(BuildContext context){
       context: context,
       builder: (ctx) {
         return AlertDialog(
-          title: Text(tr("Choose a language")),
+          title: Text(AppLocalizations.of(context).choose_a_language),
           actions: <Widget>[
             FlatButton(
-              child: Text(tr("Cancel")),
+              child: Text(AppLocalizations.of(context).cancel),
               onPressed: () {
                 Navigator.of(context).pop();
               }),
             FlatButton(
-                child: Text(tr("Ok")),
+                child: Text(AppLocalizations.of(context).ok),
                 onPressed: () {
                   setLanguageByIndex(context, selectLang);
                   Navigator.of(context).pop();
@@ -131,10 +136,10 @@ showLangDialog(BuildContext context){
 void setLanguageByIndex(BuildContext context, int selectLang) {
   switch (selectLang){
     case 0:
-      context.setLocale(Locale('zh', 'TW'));
+      MyApp.setLocale(context, Locale('zh', ''));
       break;
     case 1:
-      context.setLocale(Locale('en', 'US'));
+      MyApp.setLocale(context, Locale('en', ''));
       break;
   }
 }

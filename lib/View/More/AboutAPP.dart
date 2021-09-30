@@ -1,7 +1,7 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:over_comer_tube/MyWidget/TextWidget/MiddleAmberBoldText.dart';
 import 'package:over_comer_tube/MyWidget/TextWidget/MiddleScrollText.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AboutAppPage extends StatelessWidget {
   @override
@@ -9,7 +9,8 @@ class AboutAppPage extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
-            title: Text(tr("About APP"),
+            title: Text(
+              AppLocalizations.of(context).about_app,
               style: TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.bold,
@@ -18,7 +19,7 @@ class AboutAppPage extends StatelessWidget {
           body: CustomScrollView(
               slivers: [
                 SliverAppBar(                        // 使用 SliverAppBar
-                  title: Text(tr("intro_1")),
+                  title: Text(AppLocalizations.of(context).intro_1),
                   backgroundColor: Colors.black87,
                   expandedHeight: 60.0,
                 ),
@@ -31,13 +32,13 @@ class AboutAppPage extends StatelessWidget {
                               width: MediaQuery.of(context).size.width * .9,
                               child: MiddleAmberBoldText(
                                   buildContext: context,
-                                  text: tr("About APP_msg1")),
+                                  text: AppLocalizations.of(context).about_app_msg1),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .9,
                               child: MiddleScrollText(
                                 buildContext: context,
-                                text: tr("About APP_msg2")),
+                                text: AppLocalizations.of(context).about_app_msg2),
                             ),
                           ]
                         )

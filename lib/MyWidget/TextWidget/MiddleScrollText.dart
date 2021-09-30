@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../main.dart';
+
 class MiddleScrollText extends StatelessWidget {
 
   final String text;
@@ -21,7 +23,7 @@ class MiddleScrollText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Locale myLocale = Localizations.localeOf(buildContext);
+    Locale myLocale = MyApp.getLocale(buildContext);
     var num_langs = _LangsToInt(myLocale);
     switch(num_langs){
       case 1://zh_tw
@@ -84,10 +86,10 @@ class MiddleScrollText extends StatelessWidget {
 }
 
 _LangsToInt(Locale locale){
-  if(locale == Locale('zh', 'TW')){
+  if(locale == Locale('zh', '')){
     return 1;
   }
-  else if(locale == Locale('en', 'US')){
+  else if(locale == Locale('en', '')){
     return 2;
   }
 }

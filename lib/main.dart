@@ -20,6 +20,13 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'BlocEvent.dart';
 import 'dart:io';
+// #docregion LocalizationDelegatesImport
+import 'package:flutter_localizations/flutter_localizations.dart';
+
+// #enddocregion LocalizationDelegatesImport
+// #docregion AppLocalizationsImport
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+// #enddocregion AppLocalizationsImport
 
 import 'dart:convert' as convert;
 import 'package:http/http.dart' as http;
@@ -28,30 +35,59 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   await Firebase.initializeApp();
+  //Set and lock screen portrait
   SystemChrome
       .setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown])
       .then((_) {
         runApp(
           BlocProvider(
             create: (context) => MyBloc(),
-            child: EasyLocalization(
-              child: MyApp(),
-              supportedLocales: [Locale('zh', 'TW'), Locale('en', 'US')],
-              path: 'resources/langs',
-            )
-        ),
+            child: MyApp(),
+          )
         );
       });//Set and lock screen portrait
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   // This widget is the root of your application.
+  static void setLocale(BuildContext context, Locale newLocale) async {
+    _MyAppState state = context.findAncestorStateOfType<_MyAppState>();
+    state.changeLanguage(newLocale);
+  }
+
+  static Locale getLocale(BuildContext context) {
+    _MyAppState state = context.findAncestorStateOfType<_MyAppState>();
+    return state.getLanguage();
+  }
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+class _MyAppState extends State<MyApp> {
+  Locale _locale;
+
+  Locale getLanguage() {
+    return _locale;
+  }
+  changeLanguage(Locale locale) {
+    setState(() {
+      _locale = locale;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: EasyLocalization.of(context).supportedLocales,
-      locale: context.locale,
+      localizationsDelegates: [
+        AppLocalizations.delegate, // Add this line
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      // supportedLocales: EasyLocalization.of(context).supportedLocales,
+      supportedLocales: [
+        Locale('en', ''), // English, no country code
+        Locale('zh', ''), // Spanish, no country code
+      ],
+      locale: _locale,
       routes: {
         '/':(context) => MyHomePage(),
         '/kay0':(context) => Key0Page(),
@@ -86,7 +122,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final titles = [tr("Preface"), tr("key1_title"), tr("key2_title"), tr("key3_title"), tr("key4_title")];
+    final titles = [
+      AppLocalizations.of(context).preface,
+      AppLocalizations.of(context).key1_title,
+      AppLocalizations.of(context).key2_title,
+      AppLocalizations.of(context).key3_title,
+      AppLocalizations.of(context).key4_title
+    ];
     //多語需在context作用範圍內定義，故相關變數須放置於context作用範圍內，否則會無法更換語言
 
     checkVersion().then((version){
@@ -127,7 +169,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Padding(
                           padding: const EdgeInsets.only(top: 40.0, left: 10.0, right: 10.0, bottom: 0.0),
                           child: Text(
-                              tr("The Mystery of Life"),
+                              AppLocalizations.of(context).the_mystery_of_life,
                               style: TextStyle(
                                   color: Colors.black87,
                                   fontSize: 30,
@@ -198,10 +240,10 @@ class _MyHomePageState extends State<MyHomePage> {
                                   ],
                                 ),
                                 child: Text(
-                                  "- More -",
+                                  AppLocalizations.of(context).more,
                                   style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 26,
+                                    fontSize: 22,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -277,6 +319,9 @@ Future<String> checkVersion() async {
   String packageName = packageInfo.packageName;
   String buildNumber = packageInfo.buildNumber;
   String version = packageInfo.version;
+  print(version);
+  print(packageName);
+  print(buildNumber);
   return version;
 }
 
@@ -285,15 +330,15 @@ void showUpdateDialog(BuildContext context, String url) {
       context: context,
       builder: (ctx) {
         return AlertDialog(
-            title: Text(tr("new_version_title")),
+            title: Text(AppLocalizations.of(context).new_version_title),
             actions: <Widget>[
               FlatButton(
-                  child: Text(tr("next_time")),
+                  child: Text(AppLocalizations.of(context).next_time),
                   onPressed: () {
                     Navigator.of(context).pop();
                   }),
               FlatButton(
-                  child: Text(tr("go")),
+                  child: Text(AppLocalizations.of(context).go),
                   onPressed: () {
                     launch(url);
                     Navigator.of(context).pop();
@@ -302,7 +347,7 @@ void showUpdateDialog(BuildContext context, String url) {
             content: Container(
               width: 300,
               height: 100,
-              child: Text(tr("new_version_msg")),
+              child: Text(AppLocalizations.of(context).new_version_msg),
             )
         );
       });

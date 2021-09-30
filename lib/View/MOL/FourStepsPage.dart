@@ -1,9 +1,9 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:over_comer_tube/MyWidget/TextWidget/LargeBoldText.dart';
 import 'package:over_comer_tube/MyWidget/TextWidget/MiddleAmberBoldText.dart';
 import 'package:over_comer_tube/MyWidget/TextWidget/MiddleScrollText.dart';
 import 'package:over_comer_tube/MyWidget/TextWidget/SmallHintText.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class FourStepsPage extends StatelessWidget {
 
@@ -11,10 +11,11 @@ class FourStepsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          appBar: AppBar(title: Text(tr("key4_msg_what_must_you_do_now1")),backgroundColor: Colors.black87,),
+          appBar: AppBar(title: Text(AppLocalizations.of(context).key4_msg_what_must_you_do_now1),backgroundColor: Colors.black87,),
           body: CustomScrollView(
             slivers: [
-              // SliverAppBar(                        // 使用 SliverAppBar
+              // SliverAppBar(
+              // 使用 SliverAppBar
               //   title: Text(tr("key4_title_t1")+"\n"+tr("key4_title_t2")),
               //   backgroundColor: Colors.black87,
               //   expandedHeight: 100.0,
@@ -29,21 +30,21 @@ class FourStepsPage extends StatelessWidget {
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleScrollText(
                                 buildContext: context,
-                                text: tr("key4_msg_what_must_you_do_now2"),
+                                text: AppLocalizations.of(context).key4_msg_what_must_you_do_now2,
                               ),
                             ),
 
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .9,
                               child:LargeBoldText(
-                                  text: tr("key4_title_turn_heart")
+                                  text: AppLocalizations.of(context).key4_title_turn_heart
                               ),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleScrollText(
                                 buildContext: context,
-                                text: tr("key4_msg_turn_heart"),
+                                text: AppLocalizations.of(context).key4_msg_turn_heart,
                               ),
                             ),
 
@@ -51,26 +52,26 @@ class FourStepsPage extends StatelessWidget {
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleAmberBoldText(
                                 buildContext: context,
-                                text: tr("key4_verse_turn_heart"),
+                                text: AppLocalizations.of(context).key4_verse_turn_heart,
                               ),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: SmallHintText(
-                                text: tr("key4_verse_turn_heart_h1"),
+                                text: AppLocalizations.of(context).key4_verse_turn_heart_h1,
                               ),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .9,
                               child:LargeBoldText(
-                                  text: tr("key4_title_believe")
+                                  text: AppLocalizations.of(context).key4_title_believe
                               ),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleScrollText(
                                 buildContext: context,
-                                text: tr("key4_msg_believe"),
+                                text: AppLocalizations.of(context).key4_msg_believe,
                               ),
                             ),
 
@@ -78,27 +79,27 @@ class FourStepsPage extends StatelessWidget {
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleAmberBoldText(
                                 buildContext: context,
-                                text: tr("key4_verse_believe"),
+                                text: AppLocalizations.of(context).key4_verse_believe,
                               ),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: SmallHintText(
-                                text: tr("key4_verse_believe_h1"),
+                                text: AppLocalizations.of(context).key4_verse_believe_h1,
                               ),
                             ),
 
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .9,
                               child:LargeBoldText(
-                                  text: tr("key4_title_confess")
+                                  text: AppLocalizations.of(context).key4_title_confess
                               ),
                             ),
                             SizedBox(
                                 width: MediaQuery.of(context).size.width * .8,
                                 child: MiddleScrollText(
                                   buildContext: context,
-                                  text: tr("key4_msg_confess"),
+                                  text: AppLocalizations.of(context).key4_msg_confess,
                                 )
                             ),
 
@@ -106,19 +107,19 @@ class FourStepsPage extends StatelessWidget {
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleAmberBoldText(
                                 buildContext: context,
-                                text: tr("key4_verse_confess"),
+                                text: AppLocalizations.of(context).key4_verse_confess,
                               ),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: SmallHintText(
-                                text: tr("key4_verse_confess_h1"),
+                                text: AppLocalizations.of(context).key4_verse_confess_h1,
                               ),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .9,
                               child:LargeBoldText(
-                                  text: tr("key4_title_baptized")
+                                  text: AppLocalizations.of(context).key4_title_baptized
                               ),
                             ),
 
@@ -126,47 +127,47 @@ class FourStepsPage extends StatelessWidget {
                               width: MediaQuery.of(context).size.width * .8,
                               child:MiddleScrollText(
                                   buildContext: context,
-                                  text: tr("key4_msg_baptized1")
+                                  text: AppLocalizations.of(context).key4_msg_baptized1
                               ),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child:MiddleAmberBoldText(
                                   buildContext: context,
-                                  text: tr("key4_verse_baptized1")
+                                  text: AppLocalizations.of(context).key4_verse_baptized1
                               ),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: SmallHintText(
-                                text: tr("key4_verse_baptized1_h1"),
+                                text: AppLocalizations.of(context).key4_verse_baptized1_h1,
                               ),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child:MiddleScrollText(
                                   buildContext: context,
-                                  text: tr("key4_msg_baptized2")
+                                  text: AppLocalizations.of(context).key4_msg_baptized2
                               ),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child:MiddleAmberBoldText(
                                   buildContext: context,
-                                  text: tr("key4_verse_baptized2")
+                                  text: AppLocalizations.of(context).key4_verse_baptized2
                               ),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: SmallHintText(
-                                text: tr("key4_verse_baptized2_h1"),
+                                text: AppLocalizations.of(context).key4_verse_baptized2_h1,
                               ),
                             ),
 
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .9,
                               child:LargeBoldText(
-                                  text: tr("key4_title_pray")
+                                  text: AppLocalizations.of(context).key4_title_pray
                               ),
                             ),
 
@@ -174,7 +175,7 @@ class FourStepsPage extends StatelessWidget {
                               width: MediaQuery.of(context).size.width * .8,
                               child:MiddleAmberBoldText(
                                   buildContext: context,
-                                  text: tr("key4_msg_pray1")
+                                  text: AppLocalizations.of(context).key4_msg_pray1
                               ),
                             ),
 
@@ -182,7 +183,7 @@ class FourStepsPage extends StatelessWidget {
                               width: MediaQuery.of(context).size.width * .8,
                               child:MiddleScrollText(
                                   buildContext: context,
-                                  text: tr("key4_msg_pray2")
+                                  text: AppLocalizations.of(context).key4_msg_pray2
                               ),
                             ),
 

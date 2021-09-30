@@ -1,10 +1,10 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:over_comer_tube/MyWidget/MyAdWidget.dart';
 import 'package:over_comer_tube/MyWidget/TextWidget/LargeBoldText.dart';
 import 'package:over_comer_tube/MyWidget/TextWidget/MiddleAmberBoldText.dart';
 import 'package:over_comer_tube/MyWidget/TextWidget/MiddleScrollText.dart';
 import 'package:over_comer_tube/MyWidget/TextWidget/SmallHintText.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Key0Page extends StatelessWidget {
 
@@ -13,7 +13,7 @@ class Key0Page extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
-            title: Text(tr("Preface")),
+            title: Text(AppLocalizations.of(context).preface),
             backgroundColor: Colors.black87,
             actions: [
               IconButton(
@@ -29,7 +29,7 @@ class Key0Page extends StatelessWidget {
             slivers: [
               SliverAppBar(// 使用 SliverAppBar
                 toolbarHeight: 100.0,
-                title: Text(tr("to_know")+"\n"+tr("to_know_h1")),
+                title: Text(AppLocalizations.of(context).to_know+"\n"+AppLocalizations.of(context).to_know_h1),
                 backgroundColor: Colors.black87,
                 expandedHeight: 100.0,
               ),
@@ -42,14 +42,14 @@ class Key0Page extends StatelessWidget {
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .9,
                               child:LargeBoldText(
-                                  text: tr("title_the_reason_people_live")
+                                  text: AppLocalizations.of(context).title_the_reason_people_live
                               ),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleScrollText(
                                 buildContext: context,
-                                text: tr("msg_the_reason_people_live_1"),
+                                text: AppLocalizations.of(context).msg_the_reason_people_live_1,
                               )
                             ),
 
@@ -57,7 +57,7 @@ class Key0Page extends StatelessWidget {
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleScrollText(
                                 buildContext: context,
-                                text: tr("msg_the_reason_people_live_2"),
+                                text: AppLocalizations.of(context).msg_the_reason_people_live_2,
                               )
                             ),
 
@@ -65,14 +65,14 @@ class Key0Page extends StatelessWidget {
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleAmberBoldText(
                                 buildContext: context,
-                                text: tr("msg_the_reason_people_live_q1"),
+                                text: AppLocalizations.of(context).msg_the_reason_people_live_q1,
                               ),
                             ),
 
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .9,
                               child:LargeBoldText(
-                                  text: tr("title_gods_plan")
+                                  text: AppLocalizations.of(context).title_gods_plan
                               ),
                             ),
 
@@ -80,28 +80,28 @@ class Key0Page extends StatelessWidget {
                                 width: MediaQuery.of(context).size.width * .8,
                                 child: MiddleScrollText(
                                   buildContext: context,
-                                  text: tr("msg_gods_plan"),
+                                  text: AppLocalizations.of(context).msg_gods_plan,
                                 )
                             ),
 
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: SmallHintText(
-                                text: tr("msg_gods_plan_h2"),
+                                text: AppLocalizations.of(context).msg_gods_plan_h2,
                               ),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .8,
                               child: MiddleAmberBoldText(
                                 buildContext: context,
-                                text: tr("msg_gods_plan_q2"),
+                                text: AppLocalizations.of(context).msg_gods_plan_q2,
                               ),
                             ),
 
                             SizedBox(
                               width: MediaQuery.of(context).size.width * .9,
                               child:LargeBoldText(
-                                  text: tr("title_four_keys")
+                                  text: AppLocalizations.of(context).title_four_keys
                               ),
                             ),
 
@@ -109,7 +109,7 @@ class Key0Page extends StatelessWidget {
                                 width: MediaQuery.of(context).size.width * .8,
                                 child: MiddleScrollText(
                                   buildContext: context,
-                                  text: tr("msg_four_keys_1"),
+                                  text: AppLocalizations.of(context).msg_four_keys_1,
                                 )
                             ),
 
@@ -117,7 +117,7 @@ class Key0Page extends StatelessWidget {
                                 width: MediaQuery.of(context).size.width * .8,
                                 child: MiddleScrollText(
                                   buildContext: context,
-                                  text: tr("msg_four_keys_2"),
+                                  text: AppLocalizations.of(context).msg_four_keys_2,
                                 )
                             ),
 

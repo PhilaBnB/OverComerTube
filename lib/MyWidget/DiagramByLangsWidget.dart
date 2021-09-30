@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:over_comer_tube/main.dart';
 
 class DiagramByLangsWidget extends StatelessWidget {
 
@@ -13,7 +14,7 @@ class DiagramByLangsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Locale myLocale = Localizations.localeOf(buildContext);
+    Locale myLocale = MyApp.getLocale(buildContext);
     var num_langs = _LangsToInt(myLocale);
     switch(num_langs){
       case 1://zh_tw
@@ -27,12 +28,10 @@ class DiagramByLangsWidget extends StatelessWidget {
 }
 
 _LangsToInt(Locale locale){
-  if(locale == Locale('zh', 'TW')){
-    print('tw');
+  if(locale == Locale('zh', '')){
     return 1;
   }
-  else if(locale == Locale('en', 'US')){
-    print('us');
+  else if(locale == Locale('en', '')){
     return 2;
   }
 }
